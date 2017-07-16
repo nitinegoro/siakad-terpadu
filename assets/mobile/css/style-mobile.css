@@ -1,0 +1,127 @@
+.heading-text {
+  font-size: 20px;
+}
+
+.upper { 
+  text-transform: uppercase;
+}
+
+.nav-wrapper  {  
+  margin-bottom: 0px;
+   -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+div.container {
+  margin-top: -50px;
+  z-index: 10;
+}
+
+.box-shorcuts{
+  background-color: white;
+  padding: 10px;
+  /* border-radius: 0px 0px 0px 0px; */
+   -moz-box-shadow: 0 3px 3px gray;
+    -webkit-box-shadow: 0 4px 2px gray;
+    box-shadow: 0 2px 4px gray;
+}
+
+.box-shorcuts > a span {
+  font-weight: normal;
+  color: gray;
+  font-size: 10px;
+}
+
+div.icon-shortcuts {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 0 auto; 
+  margin-bottom: 5px;
+}
+.box-footer {
+  color: gray;
+  text-align: center;
+  margin-top: 10%;
+}
+
+div.icon-shortcuts > i.icon {
+  padding: 13px;
+  font-size: 1.7em;
+  color: white;
+}
+
+.parallax-container {
+    height: 250px;
+    width: 100%
+}
+
+.parallax img {
+  width:70%!important;
+  height:70%!important
+}
+
+.carousel-slider > a > img { 
+  margin-top: -20px;
+}
+
+div.nav-wrapper > a > .fa {
+  font-size: 25px;
+  padding: 17px;
+}
+
+
+ul.list-inline {
+  list-style: none;
+  font-size: 13px;
+}
+
+ul.list-inline > li {
+  display: inline;
+  padding: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.bigger-1 {
+  font-size: 20px;
+}
+
+.bigger-2 {
+  font-size: 17px;
+}
+
+.top-fixed {
+  margin-top: 50px;
+}
+
+.collapsible-header {
+  padding-top: 5px;
+  font-size: 11px;
+  font-weight: bold;
+  color:gray;
+  line-height: 1.5em;
+}
+.collapsible-header > small {
+  padding-left: 25px;
+}
+.collapsible-body > table {
+  font-size: 11px;
+}
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #444  !important;
+}
+.progress {
+  margin-top: -0.2px;
+}
+
+#toast-container {
+  top: 0;
+  right: auto !important;
+  padding:10px;
+}
+
+input.ng-invalid {
+  background-color: red;
+}

@@ -1,0 +1,169 @@
+
+
+/*
+ * Skin: Pertiba
+ * ----------
+ */
+.skin-pertiba .main-header .navbar {
+  background-color: #222A7B;
+  border-bottom: 3.8px solid #FCC700;
+}
+.skin-pertiba .main-header .navbar .nav > li > a {
+  color: #ffffff;
+}
+.skin-pertiba .main-header .navbar .nav > li > a:hover,
+.skin-pertiba .main-header .navbar .nav > li > a:active,
+.skin-pertiba .main-header .navbar .nav > li > a:focus,
+.skin-pertiba .main-header .navbar .nav .open > a,
+.skin-pertiba .main-header .navbar .nav .open > a:hover,
+.skin-pertiba .main-header .navbar .nav .open > a:focus,
+.skin-pertiba .main-header .navbar .nav > .active > a {
+  background: rgba(0, 0, 0, 0.1);
+  color: #f6f6f6;
+}
+.skin-pertiba .main-header .navbar .sidebar-toggle {
+  color: #ffffff;
+}
+.skin-pertiba .main-header .navbar .sidebar-toggle:hover {
+  color: #f6f6f6;
+  background: rgba(0, 0, 0, 0.1);
+}
+.skin-pertiba .main-header .navbar .sidebar-toggle {
+  color: #fff;
+}
+.skin-pertiba .main-header .navbar .sidebar-toggle:hover {
+  background-color: #222A7B;
+}
+@media (max-width: 767px) {
+  .skin-pertiba .main-header .navbar .dropdown-menu li.divider {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .skin-pertiba .main-header .navbar .dropdown-menu li a {
+    color: #fff;
+  }
+  .skin-pertiba .main-header .navbar .dropdown-menu li a:hover {
+    background: #222A7B;
+  }
+}
+.skin-pertiba .main-header .logo {
+  background-color: #222A7B;
+  color: #ffffff;
+  border-bottom: 3.8px solid #222A7B;
+}
+.skin-pertiba .main-header .logo:hover {
+  background-color: #222A7B;
+}
+.skin-pertiba .main-header li.user-header {
+  background-color: #3c8dbc;
+}
+.skin-pertiba .content-header {
+  background: transparent;
+}
+.skin-pertiba .wrapper,
+.skin-pertiba .main-sidebar,
+.skin-pertiba .left-side {
+  background-color: #f9fafc;
+}
+.skin-pertiba .content-wrapper,
+.skin-pertiba .main-footer {
+  border-left: 1px solid #d2d6de;
+}
+.skin-pertiba .user-panel > .info,
+.skin-pertiba .user-panel > .info > a {
+  color: #444444;
+}
+.skin-pertiba .sidebar-menu > li {
+  -webkit-transition: border-left-color 0.3s ease;
+  -o-transition: border-left-color 0.3s ease;
+  transition: border-left-color 0.3s ease;
+}
+.skin-pertiba .sidebar-menu > li.header {
+  color: #848484;
+  background: #f9fafc;
+}
+.skin-pertiba .sidebar-menu > li > a {
+  border-left: 3px solid transparent;
+  font-weight: 600;
+}
+.skin-pertiba .sidebar-menu > li:hover > a,
+.skin-pertiba .sidebar-menu > li.active > a {
+  color: #000000;
+  background: #f4f4f5;
+}
+.skin-pertiba .sidebar-menu > li.active {
+  border-left-color: #3c8dbc;
+}
+.skin-pertiba .sidebar-menu > li.active > a {
+  font-weight: 600;
+  border-left: 5px solid #F9C301;
+  color: #222A7B;
+}
+.skin-pertiba .sidebar-menu > li > .treeview-menu {
+  background: #f4f4f5;
+}
+.skin-pertiba .sidebar a {
+  color: #444444;
+}
+.skin-pertiba .sidebar a:hover {
+  text-decoration: none;
+}
+.skin-pertiba .treeview-menu > li > a {
+  color: #777777;
+}
+.skin-pertiba .treeview-menu > li.active > a,
+.skin-pertiba .treeview-menu > li > a:hover {
+  color: #000000;
+}
+.skin-pertiba .treeview-menu > li.active > a {
+  font-weight: 600;
+}
+.skin-pertiba .sidebar-form {
+  border-radius: 3px;
+  border: 1px solid #d2d6de;
+  margin: 10px 10px;
+}
+.skin-pertiba .sidebar-form input[type="text"],
+.skin-pertiba .sidebar-form .btn {
+  box-shadow: none;
+  background-color: #fff;
+  border: 1px solid transparent;
+  height: 35px;
+}
+.skin-pertiba .sidebar-form input[type="text"] {
+  color: #666;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+}
+.skin-pertiba .sidebar-form input[type="text"]:focus,
+.skin-pertiba .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  background-color: #fff;
+  color: #666;
+}
+.skin-pertiba .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  border-left-color: #fff;
+}
+.skin-pertiba .sidebar-form .btn {
+  color: #999;
+  border-top-left-radius: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+}
+@media (min-width: 768px) {
+  .skin-pertiba.sidebar-mini.sidebar-collapse .sidebar-menu > li > .treeview-menu {
+    border-left: 1px solid #d2d6de;
+  }
+}
+.skin-pertiba .main-footer {
+  border-top-color: #d2d6de;
+}
+.skin-blue.layout-top-nav .main-header > .logo {
+  background-color: #3c8dbc;
+  color: #ffffff;
+  border-bottom: 0 solid transparent;
+}
+.skin-blue.layout-top-nav .main-header > .logo:hover {
+  background-color: #3b8ab8;
+}

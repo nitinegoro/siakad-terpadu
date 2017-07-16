@@ -1,0 +1,59 @@
+body {
+  min-height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: #1A237E;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  color: #656d78;
+  overflow-x: hidden;
+
+}
+/* some other style */  
+}
+
+/*  LOGIN AREA */
+
+.row {
+  width: 50%;
+}
+
+.box-login {
+	margin-top: 25%;
+}
+
+.brand-company > img {
+	margin: 15% 0% 7%;
+}
+
+.box-footer {
+	color: white;
+	text-align: center;
+	margin-top: 10%;
+}
+
+/* label focus color */
+ .input-field input:focus + label {
+   color: white !important;
+ }
+ /* label underline focus color */
+ .row .input-field input:focus {
+   border-bottom: 1px solid white !important;
+   box-shadow: 0 1px 0 0 white !important
+ }
+.col.s12 > .btn {
+   width: 100%;
+}
+
+.input-field > div.error {
+	padding-left: 40px;
+	color: white;
+	font-size: 10px;
+}
+
+#toast-container {
+  top: 0;
+  right: auto !important;
+  padding:10px;
+}
