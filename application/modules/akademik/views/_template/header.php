@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/validation/css/formValidation.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url("assets/plugins/select2/select2.min.css"); ?>">
   <link rel="shortcut icon" type="image/png" href="<?php echo base_url("assets/img/logo.png"); ?>"/>
-  <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <style>
     * { font-family: 'PT Sans Narrow', sans-serif; }
     li > a > i.ion { font-size: 18px; }
