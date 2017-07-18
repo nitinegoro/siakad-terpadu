@@ -157,13 +157,14 @@
 	});
 
 
-	app.controller('susunkrsCtrl', function($scope, $filter, $http) 
+	app.controller('susunkrsCtrl', function($scope, $filter, $http, $location) 
 	{
 		$scope.loading = true; 
 		$scope.count = 0;
 		$scope.data = {
 			semester: "",
-			thnakademik: ""
+			thnakademik: "",
+			totalsks:""
 		};
 
 		$scope.count = 0;
@@ -215,6 +216,8 @@
 		   	} else {
 		    	$scope.count -= $(e.target).data('sks');
 		   	}
+
+		   	$scope.data.totalsks = $scope.count;
 		}
 
 		$scope.createkrs = function() 
@@ -242,15 +245,15 @@
 		        headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 		    }).then( function ( response ) 
 			{
-				console.log(response.data);
 				if( response.data.status === "failed") 
 				{
-					Materialize.toast('Maaf! data nilai tidak tersedia.', 2000, 'rounded red', function() {
+					Materialize.toast( response.data.message , 4000, 'rounded red', function() {
 					 	window.location.reload();
 					});
 				} else if(response.data.status === "success") {
-
-					$scope.matakuliah = response.data.results;
+					Materialize.toast( response.data.message , 4000, 'rounded red', function() {
+					 	window.location.href = '../../mobile/main';
+					});
 				}
 				
 			},function ( response ) {

@@ -36,6 +36,53 @@ class Mkrs extends CI_Model
 	}	
 
 	/**
+	 * Create New Plain Studies
+	 *
+	 * @return string
+	 **/
+	public function create($response)
+	{
+		$krk = array();
+
+		foreach($response->mk as $key => $value) 
+		{
+			$krk[] = array(
+				'student_id' => $this->student,
+				'course_id' => $key,
+				'years' => $response->thnakademik,
+				'semester' => $response->semester,
+				'verification' => '0'
+			);
+		}
+
+		$this->db->insert_batch('plain_studies', $krk);
+
+		$notif = array(
+			'student_id' => $this->student,
+			'user_id' => '0',
+			'years' => $response->thnakademik,
+			'semester' => $response->semester,
+			'datetime' => date('Y-m-d H:i:s'),
+			'read' => 2
+		);
+
+		$this->db->insert('plain_studies_callback', $notif);
+	}
+
+
+	/**
+	 * Get Detail Course
+	 *
+	 * @param Integer (course_id)
+	 * @return Row
+	 **/
+	public function getCourse($param = 0)
+	{
+		$query = $this->db->query("SELECT * FROM course WHERE course_id = ?", array($param));
+		return $query->row();
+	}
+
+	/**
 	 * Get MK Plain
 	 *
 	 * @param Integer (student_id)
