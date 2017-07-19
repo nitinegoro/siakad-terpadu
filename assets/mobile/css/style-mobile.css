@@ -68,7 +68,7 @@ div.icon-shortcuts > i.icon {
 
 div.nav-wrapper > a > .fa {
   font-size: 25px;
-  padding: 17px;
+  padding: 17px 17px 17px 17px;
 }
 
 
@@ -125,3 +125,19 @@ ul.list-inline > li {
 input.ng-invalid {
   background-color: red;
 }
+
+
+/*  NEWS */
+        .card-stacked > .card-content {
+            padding: 15px;
+        }
+        .card-stacked > .card-content > a.news-link {
+            font-size: 16px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+        }
+        a.news-link > div.box-time {
+            padding-top: 10px;
+            font-size: 10px;
+            font-weight: 500
+        }

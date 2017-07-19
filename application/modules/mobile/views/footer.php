@@ -22,12 +22,13 @@ $account = $this->account->get();
                     </a>
                 </div>
             </li>
+            <li><a href="<?php echo site_url('mobile/main') ?>">Halaman Utama</a></li>
             <li><a href="<?php echo site_url('mobile/schedule') ?>">Jadwal Kuliah</a></li>
             <li><a href="<?php echo site_url('mobile/point/point_semester') ?>">Kartu Hasil Studi</a></li>
             <li><a href="<?php echo site_url('mobile/point') ?>">Transkrip Nilai</a></li>
             <li><a href="<?php echo site_url('mobile/plain') ?>">Kartu Rencana Studi</a></li>
             <li><a href="">Pembayaran</a></li>
-            <li><a href="">Pengumuman</a></li>
+            <li><a href="<?php echo site_url('mobile/news') ?>">Pengumuman</a></li>
             <li><a href="">Journal Online</a></li>
             <li><a href="">Info Loker</a></li>
             <li><a href="">G-Drive</a></li>
@@ -71,6 +72,7 @@ $account = $this->account->get();
     
     </script>
     <script src="<?php echo base_url("assets/app/mobile/main-utama.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/app/mobile/main-other.js"); ?>"></script>
     <!-- </body></html> -->
 </body>
 </html>
