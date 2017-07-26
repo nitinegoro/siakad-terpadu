@@ -53,14 +53,11 @@ $account = $this->account->get();
 	<script src="<?php echo base_url("assets/plugins/jQuery/jquery-2.2.3.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/mobile/materialize/js/materialize.min.js"); ?>"></script>
     <script src="<?php echo base_url("assets/angular/angular.min.js") ?>"></script>
-    <script src="<?php echo base_url("assets/angular/angular-route.min.js"); ?>"></script>
-    <script src="<?php echo base_url("assets/angular/angular-animate.min.js"); ?>"></script>
-    <script src="<?php echo base_url("assets/angular/angular-messages.min.js"); ?>"></script> 
-    <script src="<?php echo base_url("assets/angular/angular-resource.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/angular/dirPagination.js"); ?>"></script>
     <script>
         let base_url = '<?php echo site_url('mobile') ?>';
 
-        let app = angular.module('app', []);
+        let app = angular.module('app', ['angularUtils.directives.dirPagination']);
 
         $(".button-collapse").sideNav();
          //$('.carousel.carousel-slider').carousel({fullWidth: true});

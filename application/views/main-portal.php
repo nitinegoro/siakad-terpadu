@@ -45,7 +45,7 @@
                      <a href="<?php echo site_url('akademik/login') ?>" class="btn btn-block btn-social btn-default btn-flat btn-lg">
                         <i class="fa fa-university" style="font-size:22px;"></i> Bag.  Akademik
                      </a>  
-                     <a href="" class="btn btn-block btn-social btn-default btn-flat btn-lg disabled">
+                     <a href="<?php echo site_url('pembimbing/login') ?>" class="btn btn-block btn-social btn-default btn-flat btn-lg">
                         <i class="ion ion-person" style="font-size:24px;"></i> Dosen PA
                      </a>  
                   </div>

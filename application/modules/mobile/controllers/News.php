@@ -19,7 +19,17 @@ class News extends Mobile_Mahasiswa
 		$this->data = array(
 			'title' => "Pengumuman"
 		);
+
 		$this->load->view('other/main-news', $this->data);
+	}
+
+	public function get($param = 0)
+	{
+		$this->data = array(
+			'title' => "Detail Pengumuman"
+		);
+
+		$this->load->view('other/detail-news', $this->data);
 	}
 
 	public function data()
@@ -28,14 +38,24 @@ class News extends Mobile_Mahasiswa
 
 		$config['base_url'] = site_url("mobile/news?per_page={$this->input->get('per_page')}");
 
-		$config['per_page'] = (!$this->input->get('per_page')) ? 3 : $this->input->get('per_page');
+		$config['per_page'] = (!$this->input->get('per_page')) ?  5 : $this->input->get('per_page');
 		$config['total_rows'] = $this->news->get_all(null, null, 'num');
 
 		$this->pagination->initialize($config);
+		
+		$results = array();
+
+		foreach ($this->news->get_all($config['per_page'], $this->input->get('page')) as $row) 
+			$results[] = array(
+				'ID' => $row->ID,
+				'title' => $row->title,
+				'image' => $row->image,
+				'date' => $row->date
+			);
 
 		$this->data = array(
 			'status' => 'success',
-			'results' => $this->news->get_all($config['per_page'], $this->input->get('page'))
+			'results' => $results,
 		);
 
 		$this->output->set_content_type('application/json')->set_output(json_encode($this->data));

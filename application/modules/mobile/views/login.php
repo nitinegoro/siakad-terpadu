@@ -17,24 +17,39 @@
 </head>
 <body ng-app="app">
     <section class="content">
- 	<div class="row" ng-controller="LoginCtrl">
-    <form class="col s12" name="formLogin" style="margin-top: 15%;" method="post">
+ 	<div class="row">
+    <form class="col s12" action="<?php echo current_url() ?>" style="margin-top: 15%;" method="post">
     	<div class="row center-align">
-			<img src="<?php echo base_url("assets/img/logo_apps.png"); ?>" alt="logo siakad">
+			 <img src="<?php echo base_url("assets/img/logo_apps.png"); ?>" alt="logo siakad">
     	</div>
+        <?php if($this->session->flashdata('callback')) : 
+            $callback = $this->session->flashdata('callback');
+        ?>
+        <div class="row">
+            <div class="col s12">
+                <div class="card-panel <?php echo $callback['color'] ?>">
+                    <span class="white-text">
+                        <i class="fa fa-<?php echo $callback['icon'] ?> "></i> <?php echo $callback['message'] ?>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
       	<div class="row">
         	<div class="input-field col s12">
           		<i class="material-icons prefix grey-text text-lighten-5">account_circle</i>
-          		<input name="npm" id="icon_prefix" type="text" class="grey-text text-lighten-5" required>
-                   <label for="icon_prefix">NPM</label>
+          		<input name="usernpm" id="icon_prefix" type="text" class="grey-text text-lighten-5">
+                <label for="icon_prefix">NPM</label>
         	</div>
+            <div class="col s12"><?php echo form_error('usernpm', '<small class="white-text">', '</small>'); ?></div>
         	<div class="input-field col s12">
           		<i class="material-icons prefix grey-text text-lighten-5">vpn_key</i>
-          		<input name="pass" id="icon_telephone" type="password" class="grey-text text-lighten-5" required>
+          		<input name="pass" id="icon_telephone" type="password" class="grey-text text-lighten-5">
           		<label for="icon_telephone">Password</label>
         	</div>
+            <div class="col s12"><?php echo form_error('pass', '<small class="white-text">', '</small>'); ?></div>
         	<div class="input-field col s12">
-		  		<button id="cek-login" class="btn waves-effect btn-large blue waves-light" type="submit" name="action">
+		  		<button id="cek-login" class="btn waves-effect btn-large blue waves-light" type="submit">
 		  			MASUK
 		  		</button>
         	</div>
@@ -48,9 +63,5 @@
     </section>
 	<script src="<?php echo base_url("assets/plugins/jQuery/jquery-2.2.3.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/mobile/materialize/js/materialize.min.js"); ?>"></script>
-    <script>
-        var base_url = '<?php echo site_url('mobile') ?>';
-    </script>
-    <script src="<?php echo base_url("assets/app/mobile/app-login.js") ?>"></script>
 </body>
 </html>

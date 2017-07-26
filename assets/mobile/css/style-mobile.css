@@ -128,16 +128,45 @@ input.ng-invalid {
 
 
 /*  NEWS */
-        .card-stacked > .card-content {
-            padding: 15px;
-        }
-        .card-stacked > .card-content > a.news-link {
-            font-size: 16px;
-            font-weight: 500;
-            font-family: 'Roboto', sans-serif;
-        }
-        a.news-link > div.box-time {
-            padding-top: 10px;
-            font-size: 10px;
-            font-weight: 500
-        }
+.card-stacked > .card-content {
+     padding: 15px;
+}
+.card-stacked > .card-content > a.news-link {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+a.news-link > div.box-time {
+    padding-top: 10px;
+    font-size: 10px;
+    font-weight: 500
+}
+
+.card  {
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+}
+
+
+.horizontal > .card-image {
+    background-image: url('../images/no-image.png');
+    background-size: 90px 90px;
+    background-repeat: no-repeat;
+}
+
+.card-content {
+    padding: 15px !important;
+}
+
+.card-content > p {
+    line-height: 1.4em;
+    padding-top: 15px;
+    font-size: 15px;
+}
+.card-more {
+    padding: 10px;
+}
+.card-more > a {  
+    font-size: 13px;
+    font-weight: 500;
+}
