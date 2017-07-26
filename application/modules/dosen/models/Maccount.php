@@ -9,7 +9,7 @@ class Maccount extends CI_Model
 	{
 		parent::__construct();
 		
-		$this->userID = $this->session->userdata('user_id');
+		$this->userID = $this->session->userdata('dosen_id');
 	}
 	
 	public function get()

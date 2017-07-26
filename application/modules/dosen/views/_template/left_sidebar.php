@@ -37,10 +37,21 @@ $this->load->model('maccount', 'account');
             </li>
           </ul>
         </li>
-        <li class="<?php echo active_link_controller('jadwal'); ?>">
-            <a href="">
-               <i class="fa fa-file-text-o"></i> <span>Verifikasi KRS</span>
+        <li class="treeview <?php echo active_link_multiple(array('krs','pembimbing')); ?>">
+            <a href="#">
+               <i class="fa fa-users"></i> <span>Pembimbing Akademik</span>
+               <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+               </span>
             </a>
+          <ul class="treeview-menu">
+            <li>
+              <a href="" class="<?php echo active_link_controller('krs'); ?>"><i class="fa fa-minus"></i> Verifikasi KRS</a>
+            </li>
+            <li>
+              <a href="<?php echo site_url('dosen/pembimbing') ?>" class="<?php echo active_link_controller('pembimbing'); ?>"><i class="fa fa-minus"></i> Data Mahasiswa</a>
+            </li>
+          </ul>
         </li>
         <li class="treeview <?php echo active_link_multiple(array('course','lecturer')); ?>">
             <a href="#">
@@ -51,17 +62,19 @@ $this->load->model('maccount', 'account');
             </a>
           <ul class="treeview-menu">
             <li>
-              <a href=""  style="text-decoration: line-through;" class="<?php echo active_link_controller('course'); ?>"><i class="fa fa-minus"></i> Mata Kuliah</a>
+              <a href="" class="<?php echo active_link_controller('course'); ?>"><i class="fa fa-minus"></i> Mata Kuliah</a>
             </li>
             <li>
-              <a href=""  style="text-decoration: line-through;" class="<?php echo active_link_controller('lecturer'); ?>"><i class="fa fa-minus"></i> Dosen</a></li>
+              <a href="" class="<?php echo active_link_controller('lecturer'); ?>"><i class="fa fa-minus"></i> Dosen</a>
+            </li>
             <li>
-              <a href="" class="<?php echo active_link_controller('student'); ?>"><i class="fa fa-minus"></i> Mahasiswa Bimbingan PA</a></li>
+              <a href="" class="<?php echo active_link_controller('student'); ?>"><i class="fa fa-minus"></i> Mahasiswa</a>
+            </li>
           </ul>
         </li>
         <li class="<?php echo active_link_controller('jadwal'); ?>">
-            <a href="<?php echo site_url('dosen/jadwal') ?>" style="text-decoration: line-through;" >
-               <i class="fa fa-calendar"></i> <span>Jadwal Kuliah</span>
+            <a href="">
+               <i class="fa fa-calendar"></i> <span>Jadwal Dosen</span>
             </a>
         </li>
       </ul>

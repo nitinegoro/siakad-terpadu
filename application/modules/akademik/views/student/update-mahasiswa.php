@@ -257,7 +257,7 @@ echo form_open(site_url("akademik/student/set_update/{$get->student_id}"), array
 					   	<select name="pa" class="form-control">
 					        <option value="">-- PILIH --</option>
 					  	<?php foreach($dosen_pa as $row) : ?>
-					        <option value="<?php echo $row->lecturer_id; ?>"><?php echo $row->lecturer_code." - ".$row->name ?></option>
+					        <option value="<?php echo $row->lecturer_id; ?>" <?php if($row->lecturer_id==$get->dosen_pa) echo "selected"; ?>><?php echo $row->lecturer_code." - ".$row->name ?></option>
 					    <?php endforeach; ?>
 					   	</select>	
 					</div>

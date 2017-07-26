@@ -198,6 +198,7 @@ class Mstudent extends CI_Model
 			'ladder' => $this->input->post('ladder'),
 			'class' => $this->input->post('class'),
 			'register_year' => $this->input->post('register_year'),
+			'dosen_pa' => $this->input->post('pa'),
 			'status' => $this->input->post('status')
 		);
 
