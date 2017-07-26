@@ -85,6 +85,7 @@ class Student extends Akademik
 			'breadcrumb' => $this->breadcrumbs->show(),
 			'page_title' => $this->page_title->show(),
 			'js' => $this->load->get_js_files(),
+			'dosen_pa' => $this->student->get_all_dosen_pa()
 		);
 
 		$this->template->view('student/add-mahasiswa', $this->data);
@@ -148,7 +149,8 @@ class Student extends Akademik
 			'breadcrumb' => $this->breadcrumbs->show(),
 			'page_title' => $this->page_title->show(),
 			'js' => $this->load->get_js_files(),
-			'get' => $this->student->get($param)
+			'get' => $this->student->get($param),
+			'dosen_pa' => $this->student->get_all_dosen_pa()
 		);
 
 		$this->template->view('student/update-mahasiswa', $this->data);

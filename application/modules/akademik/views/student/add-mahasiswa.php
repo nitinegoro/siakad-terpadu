@@ -253,6 +253,17 @@ echo form_open(site_url("akademik/student/create"), array('class' => 'form-horiz
 					</div>
 				</div>
 				<div class="form-group">
+					<label for="name" class="control-label col-md-3">Dosen Pembimbing Akademik : <strong class="text-red">*</strong></label>
+					<div class="col-md-5">
+					   	<select name="pa" class="form-control">
+					        <option value="">-- PILIH --</option>
+					  	<?php foreach($dosen_pa as $row) : ?>
+					        <option value="<?php echo $row->lecturer_id; ?>"><?php echo $row->lecturer_code." - ".$row->name ?></option>
+					    <?php endforeach; ?>
+					   	</select>	
+					</div>
+				</div>
+				<div class="form-group">
 				   	<label class="control-label col-md-3">Kelas : </label>
 				   	<div class="col-md-2">
 					   	<select name="class" class="form-control">

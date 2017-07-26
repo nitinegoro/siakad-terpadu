@@ -79,6 +79,7 @@ class Ex_student extends CI_Model
 							'ladder' => ucfirst($value['F']),
 							'class' => strtolower($value['G']),
 							'register_year' => $value['H'],
+							'dosen_pa' => 0,
 							'status' => 'active'
 						);
 						$this->db->insert('students', $mahasiswa);

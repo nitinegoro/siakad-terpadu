@@ -62,6 +62,8 @@ $route['mahasiswa/khs']				= 'mahasiswa/khs';
 $route['mahasiswa/khs/print'] 		= 'mahasiswa/khs/getprint';
 $route['mahasiswa/account/setting'] = 'mahasiswa/account/setting';
 
+$route['dosen'] 	= 'dosen/main';
+
 /************************** Modules Admin *************************/
 $route['akademik'] 			= 'akademik/main';
 
