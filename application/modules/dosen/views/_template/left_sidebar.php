@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+$this->load->model('maccount', 'account');
 ?>
    <aside class="main-sidebar">
       <section class="sidebar">
@@ -35,8 +37,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </li>
           </ul>
         </li>
+        <li class="<?php echo active_link_controller('jadwal'); ?>">
+            <a href="">
+               <i class="fa fa-file-text-o"></i> <span>Verifikasi KRS</span>
+            </a>
+        </li>
         <li class="treeview <?php echo active_link_multiple(array('course','lecturer')); ?>">
-            <a href="#" style="text-decoration: line-through;">
+            <a href="#">
                <i class="fa fa-database"></i> <span>Master Data</span>
                <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
@@ -49,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li>
               <a href=""  style="text-decoration: line-through;" class="<?php echo active_link_controller('lecturer'); ?>"><i class="fa fa-minus"></i> Dosen</a></li>
             <li>
-              <a href=""  style="text-decoration: line-through;" class="<?php echo active_link_controller('student'); ?>"><i class="fa fa-minus"></i> Mahasiswa</a></li>
+              <a href="" class="<?php echo active_link_controller('student'); ?>"><i class="fa fa-minus"></i> Mahasiswa Bimbingan PA</a></li>
           </ul>
         </li>
         <li class="<?php echo active_link_controller('jadwal'); ?>">

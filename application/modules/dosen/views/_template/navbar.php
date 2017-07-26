@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body class="hold-transition skin-pertiba sidebar-mini fixed">
    <div class="wrapper">
       <header class="main-header">
-         <a href="<?php echo site_url('akademik/main') ?>" class="logo">
+         <a href="<?php echo site_url('dosen') ?>" class="logo">
             <img src="<?php echo base_url("assets/img/brand.png"); ?>" class="logo-head logo-lg" alt="Logo STIE Pertiba">
             <img src="<?php echo base_url("assets/img/logo-xs.png"); ?>" class="logo-mini" alt="Logo STIE Pertiba">
          </a>
@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                <li class="dropdown user user-menu" data-toggle="tooltip" data-placement="bottom" title="Pengaturan Login">
-                  <a href="<?php echo site_url('dosen/user/account'); ?>" style="font-size: 20px;">
+                  <a href="<?php echo site_url('dosen/account'); ?>" style="font-size: 20px;">
                      <i class="fa fa-user"></i>
                   </a>
                </li>
