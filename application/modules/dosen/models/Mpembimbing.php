@@ -42,6 +42,42 @@ class Mpembimbing extends CI_Model
 			return $this->db->get('students')->num_rows();
 		}
 	}
+
+	/**
+	 * Get Data Mhs
+	 *
+	 * @return Row
+	 **/
+	public function getmhs($param = 0, $fieldset= 'student_id')
+	{
+		$this->db->join('concentration', 'students.concentration_id = concentration.concentration_id', 'left');
+
+		if($fieldset == 'student_id') 
+		{
+			$this->db->join('students_parent', 'students.student_id = students_parent.student_id', 'left');
+
+			$this->db->join('students_origin_school', 'students.student_id = students_origin_school.school_student_id', 'left');
+
+			$this->db->where('students.student_id', $param);
+		} else {
+			$this->db->where('students.npm', $param);
+		}
+
+		$this->db->where('students.dosen_pa', $this->userID);
+
+		return $this->db->get('students')->row();
+	}
+
+	public function getkrs($student = '', $thn_ajaran = '', $semester = '')
+	{
+		$query = $this->db->query("SELECT students.*, plain_studies.*, course.* 
+			FROM plain_studies JOIN course ON plain_studies.course_id = course.course_id 
+			JOIN students ON plain_studies.student_id = students.student_id 
+			WHERE students.npm = ? AND plain_studies.years = ? AND plain_studies.semester = ?", 
+			array($student, $thn_ajaran, $semester)
+		);
+		return $query->result();
+	}
 }
 
 /* End of file Mpembimbing.php */

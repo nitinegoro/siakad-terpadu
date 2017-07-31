@@ -72,7 +72,7 @@ echo form_open(current_url(), array('method' => 'get'));
 				<div class="col-md-3">
 				    <div class="form-group">
                     <button type="submit" class="btn btn-default top"><i class="fa fa-filter"></i> Filter</button>
-                    <a href="<?php echo site_url('akademik/student') ?>" class="btn btn-default top" style="margin-left: 10px;"><i class="fa fa-times"></i> Reset</a>
+                    <a href="<?php echo site_url('dosen/pembimbing') ?>" class="btn btn-default top" style="margin-left: 10px;"><i class="fa fa-times"></i> Reset</a>
 				    </div>
 				</div>
 			</div>
@@ -80,13 +80,11 @@ echo form_open(current_url(), array('method' => 'get'));
 // Close Form Filter
 echo form_close();
 
-// Start Checkbox Table
-echo form_open(site_url("akademik/student/bulk_action"));
 ?>
 			<div class="box-body">
 				<div class="col-md-6">
 					Tampilkan 
-					<select name="per_page" class="form-control input-sm" style="width:60px; display: inline-block;" onchange="window.location = '<?php echo site_url('akademik/student?per_page='); ?>' + this.value;">
+					<select name="per_page" class="form-control input-sm" style="width:60px; display: inline-block;" onchange="window.location = '<?php echo site_url('dosen/pembimbing?per_page='); ?>' + this.value;">
 					<?php  
 					/**
 					 * Loop 10 to 100
@@ -104,11 +102,6 @@ echo form_open(site_url("akademik/student/bulk_action"));
 					?>
 					</select>
 					per Halaman
-				</div>
-				<div class="col-md-3 pull-right">
-					<a href="" class="btn btn-default btn-print">
-						<i class="fa fa-print"></i> Cetak
-					</a>
 				</div>
 				<div class="col-md-12"><hr>
 					<table class="table table-bordered table-hover table-black table-bordered-black mini-font">
@@ -143,7 +136,7 @@ echo form_open(site_url("akademik/student/bulk_action"));
 								<td><?php echo $row->concentration_name; ?></td>
 								<td><?php echo ucfirst($row->class); ?></td>
 								<td class="text-center">
-									<a href="<?php echo site_url("dosen/pembimbing/get/{$row->student_id}"); ?>" class="icon-button text-green" data-toggle="tooltip" data-placement="top" title="Lihat lebih Lengkap">
+									<a href="<?php echo site_url("dosen/pembimbing/getmhs/{$row->student_id}"); ?>" class="icon-button text-green" data-toggle="tooltip" data-placement="top" title="Lihat lebih Lengkap">
 										<i class="fa fa-eye"></i>
 									</a>
 								</td>
@@ -164,26 +157,6 @@ echo form_open(site_url("akademik/student/bulk_action"));
 				</div>
 			</div>
 
-
-			<div class="modal animated fadeIn modal-danger" id="modal-delete-mhs-multiple" tabindex="-1" data-backdrop="static" data-keyboard="false">
-				<div class="modal-dialog modal-sm">
-				    <div class="modal-content">
-				        <div class="modal-header">
-				            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				            <h4 class="modal-title"><i class="fa fa-question-circle"></i> Hapus!</h4>
-				            <span>Hapus Mahasiswa ini dari sistem?</span>
-				        </div>
-				        <div class="modal-footer">
-				            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Tidak</button>
-				            <button type="submit" name="action" value="delete" id="btn-delete" class="btn btn-outline"> Hapus </button>
-				        </div>
-				    </div>
-				</div>
-			</div>
-<?php  
-// Form Close Checkbox Mahasiswa
-echo form_close();
-?>
 			<div class="box-footer text-center">
 				<?php echo $this->pagination->create_links(); ?>
 			</div>

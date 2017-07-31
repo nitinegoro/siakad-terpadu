@@ -46,10 +46,10 @@ $this->load->model('maccount', 'account');
             </a>
           <ul class="treeview-menu">
             <li>
-              <a href="" class="<?php echo active_link_controller('krs'); ?>"><i class="fa fa-minus"></i> Verifikasi KRS</a>
+              <a href="<?php echo site_url('dosen/pembimbing/krs') ?>" class="<?php echo active_link_method('krs','pembimbing'); ?>"><i class="fa fa-minus"></i> Verifikasi KRS</a>
             </li>
             <li>
-              <a href="<?php echo site_url('dosen/pembimbing') ?>" class="<?php echo active_link_controller('pembimbing'); ?>"><i class="fa fa-minus"></i> Data Mahasiswa</a>
+              <a href="<?php echo site_url('dosen/pembimbing') ?>" class="<?php echo active_link_method('index','pembimbing'); ?>"><i class="fa fa-minus"></i> Data Mahasiswa</a>
             </li>
           </ul>
         </li>
