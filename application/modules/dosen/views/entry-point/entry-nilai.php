@@ -6,12 +6,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="col-md-12">
 		<div class="box pad box-primary">
 			<div class="box-body with-border">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<a href="" class="btn btn-app"><i class="fa fa-undo"></i> Kembali</a>
-					<a href="" class="btn btn-app btn-print"><i class="fa fa-print"></i> Cetak</a>
-					<a href="" class="btn btn-app"><i class="fa fa-download"></i> Ekspor</a>
+					<a href="<?php echo site_url("dosen/entrypoint/cetak_nilai_kelas/{$this->param}") ?>" class="btn btn-app btn-print"><i class="fa fa-print"></i> Cetak</a>
+					<!--<a href="" class="btn btn-app"><i class="fa fa-download"></i> Ekspor</a>-->
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-5">
 					<table>
 						<tr>
 							<th>Kode MK </th><th width="30" class="text-center">:</th>
@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		echo form_open(site_url("dosen/entrypoint/set_nilai/{$this->uri->segment(4)}"));
 		?>
 					<div class="col-md-12"><hr></div>
-					<table class="table table-bordered table-responsive table-nilai-input">
+					<table class="table table-bordered table-responsive table-nilai-input table-hover">
 						<thead class="bg-silver">
 							<tr>
 								<th rowspan="2" width="30" class="text-center">No.</th>
@@ -87,19 +87,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<td class="text-center"><?php echo ++$key; ?>.</td>
 								<td><?php echo $value->npm; ?></td>
 								<td><?php echo $value->name; ?></td>
-								<td class="td-nilai">
+								<td class="td-nilai" title="Ubah Nilai Absen">
 									<input type="text" value="<?php echo $value->absent; ?>" name="point[<?php echo $value->result_id ?>][absent]" class="input-nilai">
 								</td>
-								<td class="td-nilai">
+								<td class="td-nilai" title="Ubah Nilai Tugas">
 									
 									<input type="text" value="<?php echo $value->task; ?>" name="point[<?php echo $value->result_id ?>][task]" class="input-nilai">
 								</td>
-								<td class="td-nilai">
+								<td class="td-nilai" title="Ubah Nilai UTS">
 									
 								<input type="text" value="<?php echo $value->midterms; ?>" name="point[<?php echo $value->result_id ?>][midterms]" class="input-nilai">
 								</td>
-								<td class="td-nilai">
-										
+								<td class="td-nilai" title="Ubah Nilai UAS">
 									<input type="text" value="<?php echo $value->final; ?>" name="point[<?php echo $value->result_id ?>][final]" class="input-nilai">
 								</td>
 								<td class="text-center"><?php echo $value->point; ?></td>

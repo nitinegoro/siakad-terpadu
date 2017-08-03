@@ -21,21 +21,10 @@ $this->load->model('maccount', 'account');
                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
-        <li class="treeview <?php echo active_link_multiple(array('entrypoint','transkrip')); ?>">
-            <a href="#">
-               <i class="fa fa-pencil"></i> <span>Master Nilai</span>
-               <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-               </span>
+        <li class="<?php echo active_link_multiple(array('entrypoint','transkrip')); ?>">
+            <a href="<?php echo site_url('dosen/entrypoint') ?>">
+               <i class="fa fa-pencil"></i> <span>Entry Nilai</span>
             </a>
-          <ul class="treeview-menu">
-            <li>
-              <a href="<?php echo site_url('dosen/entrypoint') ?>" class="<?php echo active_link_method('index', 'entrypoint'); ?>"><i class="fa fa-minus"></i> Entry Nilai</a>
-            </li>
-            <li>
-              <a href="" class="<?php echo active_link_method('index', 'transkrip'); ?>" style="text-decoration: line-through;"><i class="fa fa-minus"></i> Data Nilai</a>
-            </li>
-          </ul>
         </li>
         <li class="treeview <?php echo active_link_multiple(array('krs','pembimbing')); ?>">
             <a href="#">

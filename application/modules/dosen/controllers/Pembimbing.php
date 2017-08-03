@@ -120,9 +120,6 @@ class Pembimbing extends Dosen
 		$this->pa->setKrs($param);
 
 		redirect("dosen/pembimbing?{$this->input->server('QUERY_STRING')}",'refresh');
-
-		echo "<pre>";
-		print_r($this->input->post());
 	}
 }
 

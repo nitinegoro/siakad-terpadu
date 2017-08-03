@@ -123,7 +123,7 @@ class Login extends CI_Controller
     {
         // get query prepare statmennts
         $query = $this->db->query("
-            SELECT lecturer.lecturer_id, lecturer.name, lecturer_accounts.* FROM lecturer JOIN lecturer_accounts ON lecturer.lecturer_id = lecturer_accounts.lecturer_id WHERE lecturer_code = ?", array($param));
+            SELECT lecturer.lecturer_id, lecturer.name, lecturer.lecturer_code, lecturer_accounts.* FROM lecturer JOIN lecturer_accounts ON lecturer.lecturer_id = lecturer_accounts.lecturer_id WHERE lecturer_code = ?", array($param));
 
         if($query->num_rows() == 1)
         {

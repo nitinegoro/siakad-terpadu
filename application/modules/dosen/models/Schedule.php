@@ -19,7 +19,7 @@ class Schedule extends CI_model
 
 		$this->semester = $this->input->get('semester');
 
-		$this->account = $this->session->userdata('user_id');
+		$this->account = $this->session->userdata('dosen_id');
 	}
 	
 	public function get($thn_akademik = '', $semester = '')
