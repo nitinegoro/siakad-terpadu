@@ -76,6 +76,7 @@ echo form_close();
  **/
 if($get) :
 	echo form_open(site_url("dosen/pembimbing/setkrs/{$get->student_id}?{$this->input->server('QUERY_STRING')}"));
+	echo form_hidden('npm', $this->input->get('npm'));
 	echo form_hidden('semester', $this->input->get('semester'));
 	echo form_hidden('years', $this->input->get('thn_ajaran'));
 ?>
@@ -105,16 +106,16 @@ if($get) :
 							<td><?php echo $get->ladder; ?></td>
 						</tr>
 						<tr>
+							<th>Tahun Masuk </th><th width="30" class="text-center">:</th>
+							<td><?php echo $get->register_year ?></td>
+						</tr>
+						<tr>
 							<th>Konsentrasi </th><th width="30" class="text-center">:</th>
 							<td><?php echo $get->concentration_name; ?></td>
 						</tr>
 						<tr>
 							<th>Kelas </th><th width="30" class="text-center">:</th>
 							<td><?php echo ucfirst($get->class) ?></td>
-						</tr>
-						<tr>
-							<th>Tahun Masuk </th><th width="30" class="text-center">:</th>
-							<td><?php echo $get->register_year ?></td>
 						</tr>
 					</table>		
 				</div>
@@ -127,6 +128,14 @@ if($get) :
 						<tr>
 							<th>Semester </th><th width="30" class="text-center">:</th>
 							<td><?php echo ucfirst($this->input->get('semester')); ?></td>
+						</tr>
+						<tr>
+							<th>IPS Semester Lalu </th><th width="30" class="text-center">:</th>
+							<td><?php echo ($daftar_krs) ? str_replace('.', ',', $this->nilai->getIp()) : ''; ?></td>
+						</tr>
+						<tr>
+							<th>Maksimum kredit SKS </th><th width="30" class="text-center">:</th>
+							<td><?php echo ($daftar_krs) ? $this->nilai->credit_sks() . ' SKS': ''; ?></td>
 						</tr>
 					</table>
 				</div>

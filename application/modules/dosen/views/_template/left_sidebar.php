@@ -53,6 +53,7 @@ $this->load->model('maccount', 'account');
             </li>
           </ul>
         </li>
+        <!--
         <li class="treeview <?php echo active_link_multiple(array('course','lecturer')); ?>">
             <a href="#">
                <i class="fa fa-database"></i> <span>Master Data</span>
@@ -72,6 +73,7 @@ $this->load->model('maccount', 'account');
             </li>
           </ul>
         </li>
+        -->
         <li class="<?php echo active_link_controller('jadwal'); ?>">
             <a href="">
                <i class="fa fa-calendar"></i> <span>Jadwal Dosen</span>

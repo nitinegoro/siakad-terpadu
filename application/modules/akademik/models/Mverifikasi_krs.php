@@ -233,7 +233,7 @@ class Mverifikasi_krs extends CI_Model
 			$point[] = array(
 				'student_id' => $this->input->post('student_id'),
 				'course_id' => $row->course_id,
-				'lecturer_schedule_id' => 0,
+				'schedule_id' => 0,
 				'absent' => 0,
 				'task' => 0,
 				'midterms' => 0,
@@ -275,7 +275,7 @@ class Mverifikasi_krs extends CI_Model
 			$point = array(
 				'student_id' => $this->input->post('student_id'),
 				'course_id' => $row->course_id,
-				'lecturer_schedule_id' => 0,
+				'schedule_id' => 0,
 				'absent' => 0,
 				'task' => 0,
 				'midterms' => 0,

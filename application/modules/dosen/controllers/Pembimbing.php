@@ -102,11 +102,25 @@ class Pembimbing extends Dosen
 			'daftar_krs' => $this->pa->getkrs($this->input->get('npm'), $this->thn_ajaran, $this->semester)
 		);
 
+		$last_semester = ($this->semester == 'ganjil') ? 'genap' : 'ganjil';
+		$cek_last_semester = $this->pa->getPlain($this->npm, $this->thn_ajaran, $last_semester);
+
+		$config = array(
+			'student' => (isset($this->data['get']->student_id)) ? $this->data['get']->student_id : 0,
+			'semester' => (!$cek_last_semester) ? $this->input->get('semester') : $last_semester,
+			'years' => $this->thn_ajaran,
+		);
+		$this->load->library('nilai', $config);
+
 		$this->template->view('pembimbing/get-krs', $this->data);
 	}
 
 	public function setkrs($param = '')
 	{
+		$this->pa->setKrs($param);
+
+		redirect("dosen/pembimbing?{$this->input->server('QUERY_STRING')}",'refresh');
+
 		echo "<pre>";
 		print_r($this->input->post());
 	}
