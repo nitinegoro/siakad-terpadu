@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="id-ID">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,16 @@
   <link rel="stylesheet" href="<?php echo base_url("assets/ionicons/css/ionicons.min.css"); ?>">
   <link rel="stylesheet" href="<?php echo base_url("assets/dist/AdminLTE.min.css"); ?>">
   <link rel="shortcut icon" type="image/png" href="<?php echo base_url("assets/img/logo.png"); ?>"/>
+  <meta property="og:title" content="<?php echo $title; ?> | Login"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="<?php echo base_url("assets/img/logo.png"); ?>" />
+  <meta property="og:image:width" content="90" />
+  <meta property="og:image:height" content="90" />
+  <meta property="og:url" content="<?php echo current_url(); ?>" />
+  <meta property="og:description" content="Sistem informasi akademik STIE PErtiba adalah suatu sistem yang dibangun untuk mengelola data-data akademik kampus sehingga memberikan kemudahan kepada mahasiswa, dosen, hingga administrasi akademik kampus secara online." />
+  <meta property="fb:admins" content="stiepertibababel" />
+
+  <meta name=”description” content="Sistem informasi akademik STIE PErtiba adalah suatu sistem yang dibangun untuk mengelola data-data akademik kampus sehingga memberikan kemudahan kepada mahasiswa, dosen, hingga administrasi akademik kampus secara online.">
   <style>
     body { height: auto; background-color: #ECF0F5; }
     .lockscreen-itme { padding: 10px; }
@@ -30,7 +40,7 @@
       <div class="row">
          <div class="col-md-4 col-md-offset-4 col-sm-5 col-xs-12" style="margin-top: 20%; text-align:center;">
            <div class="text-center">
-             <img src="<?php echo base_url("assets/img/logo_login-2.png"); ?>" class="img" alt="logo siakad">
+             <img src="<?php echo base_url("assets/img/logo_login-2.png"); ?>" class="img" alt="logo siakad stie pertiba">
            </div>
             <div class="box" style="margin-top: 20px; border-color:#F8C301;">
                <div class="box-body">
@@ -58,9 +68,4 @@
 <!-- /.container -->
 <script src="<?php echo base_url("assets/plugins/jQuery/jquery-2.2.3.min.js"); ?>"></script>
 <script src="<?php echo base_url("assets/bootstrap/bootstrap.min.js"); ?>"></script>
-<script src="<?php echo base_url("assets/dist/jquery.backstretch.min.js"); ?>"></script>
-    <script>
-        //$.backstretch("<?php echo base_url("assets/img/login-bg.jpg"); ?>", {speed:10});
-    </script>
-</body>
 </html>

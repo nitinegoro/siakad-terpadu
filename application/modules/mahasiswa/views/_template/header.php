@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -36,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     a { cursor: pointer; }
     .icon-button { font-size: 1.3em; }
     .text-line { text-decoration: line-through; color: red; }
-  .table-black{border:.5px solid #cdcdcd}.table-bordered-black > thead > tr > th,.table-bordered-black > tbody > tr > th,.table-bordered-black > tfoot > tr > th,.table-bordered-black > thead > tr > td,.table-bordered-black > tbody > tr > td,.table-bordered-black > tfoot > tr > td{border:.5px solid #cdcdcd}
+    .table-black{border:.5px solid #cdcdcd}.table-bordered-black > thead > tr > th,.table-bordered-black > tbody > tr > th,.table-bordered-black > tfoot > tr > th,.table-bordered-black > thead > tr > td,.table-bordered-black > tbody > tr > td,.table-bordered-black > tfoot > tr > td{border:.5px solid #cdcdcd}
   li.active > a { font-weight: bold; }
   </style>
 </head>
