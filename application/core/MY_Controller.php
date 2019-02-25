@@ -31,7 +31,7 @@ class Mahasiswa extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library(array('config','table','user_agent'));
+		$this->load->library(array('config','table','user_agent', 'page_title', 'breadcrumbs', 'template'));
 
 		$this->load->model('maccount', 'account');
 

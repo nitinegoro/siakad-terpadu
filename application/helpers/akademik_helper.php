@@ -17,6 +17,9 @@ if ( ! function_exists('tgl_indo'))
 {
 	function tgl_indo($tgl)
 	{
+		if( $tgl == '0000-00-00')
+			return "----/--/--";
+
 		date_default_timezone_set('Asia/Jakarta');
 		$ubah = gmdate($tgl, time()+60*60*8);
 		$pecah = explode("-",$ubah);

@@ -89,6 +89,7 @@ class Mstudent extends CI_Model
 			'ladder' => $this->input->post('ladder'),
 			'class' => $this->input->post('class'),
 			'register_year' => $this->input->post('register_year'),
+			'dosen_pa' => $this->input->post('pa'),
 			'status' => 'active'
 		);
 
@@ -197,6 +198,7 @@ class Mstudent extends CI_Model
 			'ladder' => $this->input->post('ladder'),
 			'class' => $this->input->post('class'),
 			'register_year' => $this->input->post('register_year'),
+			'dosen_pa' => $this->input->post('pa'),
 			'status' => $this->input->post('status')
 		);
 
@@ -276,6 +278,22 @@ class Mstudent extends CI_Model
 				array('type' => 'success','icon' => 'check')
 			);	
 		} 
+	}
+
+	/**
+	 * Return Result
+	 *
+	 * @var string
+	 **/
+	public function get_all_dosen_pa()
+	{
+		$this->db->select('lecturer.lecturer_id, lecturer.lecturer_code, lecturer.nidn, lecturer.name');
+
+		$this->db->where('lecturer.status', 'ds_tetap');
+
+		$this->db->join('lecturer', 'dosen_pa.lecturer_id = lecturer.lecturer_id', 'left');
+
+		return $this->db->get('dosen_pa')->result();
 	}
 }
 

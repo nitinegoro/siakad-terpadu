@@ -85,11 +85,6 @@ echo form_close();
 					<table class="table table-bordered table-hover table-black table-bordered-black">
 						<thead class="bg-silver">
 							<tr>
-								<th width="40">
-				                    <div class="checkbox checkbox-inline">
-				                        <input id="checkbox1" type="checkbox"> <label for="checkbox1"></label>
-				                    </div>
-								</th>
 								<th width="100" class="text-center">Kode MK</th>
 								<th class="text-center">Mata Kuliah</th>
 								<th class="text-center">SKS</th>
@@ -108,11 +103,6 @@ echo form_close();
 					foreach($jadwal_mengajar as $row) :
 					?>
 						<tr>
-							<td>
-				               <div class="checkbox checkbox-inline">
-				                   <input id="checkbox1" type="checkbox"> <label for="checkbox1"></label>
-				               </div>
-							</td>
 							<td class="text-center"> <?php echo $row->course_code; ?> </td>
 							<td><?php echo $row->course_name; ?> <br><small><i><?php echo $row->course_name_english; ?></i></small></td>
 							<td class="text-center"><?php echo $row->sks; ?></td>
@@ -120,7 +110,7 @@ echo form_close();
                             <td class="text-center"><?php echo $row->session_start." - ".$row->session_end; ?></td>
                             <td class="text-center"><?php echo $row->class_name; ?></td>
                             <td class="text-center">
-								<a href="<?php echo site_url("dosen/entrypoint/set/{$row->lecturer_schedule_id}") ?>" class="icon-button text-blue" data-id="" data-toggle="tooltip" data-placement="top" title="Entry Nilai Kelas ini">
+								<a href="<?php echo site_url("dosen/entrypoint/set/{$row->lecturer_schedule_id}?") ?>" class="icon-button text-blue" data-id="" data-toggle="tooltip" data-placement="top" title="Entry Nilai Kelas ini">
 									<i class="fa fa-pencil"></i>
 								</a>
                             </td>
@@ -132,29 +122,11 @@ echo form_close();
 						<tfoot>
 							<tr>
 								<td colspan="11">
-									<label style="font-size: 11px; margin-right: 10px;">Yang terpilih :</label>
-									<a class="btn btn-xs btn-round btn-danger get-delete-schedule-multiple"><i class="fa fa-trash-o"></i> Hapus</a>
 									<span class="pull-right">Total <?php echo count($jadwal_mengajar) ." data"; ?></span>	
 								</td>
 							</tr>
 						</tfoot>
 					</table>
-				</div>
-
-				<div class="modal animated fadeIn modal-danger" id="modal-delete-schedule-multiple" tabindex="-1" data-backdrop="static" data-keyboard="false">
-					<div class="modal-dialog modal-sm">
-					    <div class="modal-content">
-					        <div class="modal-header">
-					            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					            <h4 class="modal-title"><i class="fa fa-question-circle"></i> Hapus!</h4>
-					            <span>Hapus pengguna ini dari sistem?</span>
-					        </div>
-					        <div class="modal-footer">
-					            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Tidak</button>
-					            <button type="submit" name="action" value="delete" id="btn-delete" class="btn btn-outline"> Hapus </button>
-					        </div>
-					    </div>
-					</div>
 				</div>
 <?php  
 		// End Form Bulk Actiom

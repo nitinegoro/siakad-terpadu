@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+$this->load->model('maccount', 'account');
 ?>
    <aside class="main-sidebar">
       <section class="sidebar">
@@ -19,24 +21,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
-        <li class="treeview <?php echo active_link_multiple(array('entrypoint','transkrip')); ?>">
+        <li class="<?php echo active_link_multiple(array('entrypoint','transkrip')); ?>">
+            <a href="<?php echo site_url('dosen/entrypoint') ?>">
+               <i class="fa fa-pencil"></i> <span>Entry Nilai</span>
+            </a>
+        </li>
+        <li class="treeview <?php echo active_link_multiple(array('krs','pembimbing')); ?>">
             <a href="#">
-               <i class="fa fa-pencil"></i> <span>Master Nilai</span>
+               <i class="fa fa-users"></i> <span>Pembimbing Akademik</span>
                <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                </span>
             </a>
           <ul class="treeview-menu">
             <li>
-              <a href="<?php echo site_url('dosen/entrypoint') ?>" class="<?php echo active_link_method('index', 'entrypoint'); ?>"><i class="fa fa-minus"></i> Entry Nilai</a>
+              <a href="<?php echo site_url('dosen/pembimbing/krs') ?>" class="<?php echo active_link_method('krs','pembimbing'); ?>"><i class="fa fa-minus"></i> Verifikasi KRS</a>
             </li>
             <li>
-              <a href="" class="<?php echo active_link_method('index', 'transkrip'); ?>" style="text-decoration: line-through;"><i class="fa fa-minus"></i> Data Nilai</a>
+              <a href="<?php echo site_url('dosen/pembimbing') ?>" class="<?php echo active_link_method('index','pembimbing'); ?>"><i class="fa fa-minus"></i> Data Mahasiswa</a>
             </li>
           </ul>
         </li>
+        <!--
         <li class="treeview <?php echo active_link_multiple(array('course','lecturer')); ?>">
-            <a href="#" style="text-decoration: line-through;">
+            <a href="#">
                <i class="fa fa-database"></i> <span>Master Data</span>
                <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
@@ -44,17 +52,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
           <ul class="treeview-menu">
             <li>
-              <a href=""  style="text-decoration: line-through;" class="<?php echo active_link_controller('course'); ?>"><i class="fa fa-minus"></i> Mata Kuliah</a>
+              <a href="" class="<?php echo active_link_controller('course'); ?>"><i class="fa fa-minus"></i> Mata Kuliah</a>
             </li>
             <li>
-              <a href=""  style="text-decoration: line-through;" class="<?php echo active_link_controller('lecturer'); ?>"><i class="fa fa-minus"></i> Dosen</a></li>
+              <a href="" class="<?php echo active_link_controller('lecturer'); ?>"><i class="fa fa-minus"></i> Dosen</a>
+            </li>
             <li>
-              <a href=""  style="text-decoration: line-through;" class="<?php echo active_link_controller('student'); ?>"><i class="fa fa-minus"></i> Mahasiswa</a></li>
+              <a href="" class="<?php echo active_link_controller('student'); ?>"><i class="fa fa-minus"></i> Mahasiswa</a>
+            </li>
           </ul>
         </li>
+        -->
         <li class="<?php echo active_link_controller('jadwal'); ?>">
-            <a href="<?php echo site_url('dosen/jadwal') ?>" style="text-decoration: line-through;" >
-               <i class="fa fa-calendar"></i> <span>Jadwal Kuliah</span>
+            <a href="">
+               <i class="fa fa-calendar"></i> <span>Jadwal Dosen</span>
             </a>
         </li>
       </ul>

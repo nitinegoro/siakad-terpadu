@@ -15,6 +15,33 @@ class Login extends CI_Controller
 			'title' => "Login - Sistem Informasi Akademik STIE Pertiba", 
 		);
 
+		$this->form_validation->set_rules('usernpm', 'NPM', 'trim|required');
+		$this->form_validation->set_rules('pass', 'Password', 'trim|required');
+
+		if( $this->form_validation->run() == TRUE )
+		{
+	        $npm = $this->input->post('usernpm');
+	        $password = $this->input->post('pass');
+
+	        // get data account
+	        $account = $this->get_account($npm);
+
+	        if (password_verify($password, $account->password)) 
+	        {
+	        	$this->_set_account_login($account);
+
+	        	redirect('mobile/main');
+	        } else {
+				$this->session->set_flashdata('callback', 
+					array(
+						'color' => 'red',
+						'message' => ' Kombinasi NPM dan Password tidak valid!',
+						'icon' => 'check'
+					)
+				);
+	        }
+		}
+
 		$this->load->view('login', $this->data);
 	}
 
@@ -26,7 +53,7 @@ class Login extends CI_Controller
 	        $password = $this->input->post('pass');
 
 	        // get data account
-	        $account = $this->_get_account($npm);
+	        $account = $this->get_account($npm);
 
 	        if (password_verify($password, $account->password)) 
 	        {
@@ -48,7 +75,7 @@ class Login extends CI_Controller
 	 * @access private
 	 * @return Object
 	 **/
-	private function _get_account($param = 0)
+	private function get_account($param = 0)
 	{
 		// get query prepare statmennts
 		$query = $this->db->query("
@@ -74,12 +101,12 @@ class Login extends CI_Controller
 	 **/
 	private function _set_account_login($account)
 	{
-        // set session data
         $account_session = array(
         	'is_login' => TRUE,
         	'account_id' => $account->account_student_id,
         	'account' => $account
         );	
+
        $this->session->set_userdata( $account_session );
 	}
 

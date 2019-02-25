@@ -18,6 +18,9 @@ $this->load->view('header', $this->data);
                 </nav>
             </div>
         </header>
+        <div class="progress indigo" ng-show="loading">
+            <div class="indeterminate white"></div>
+        </div>
         <form name="susun-krs-form">
         <section class="white" style="padding-bottom: 1px;margin-top: 105px">
             <div class="container" style="padding-top: 20px;">
@@ -31,7 +34,6 @@ $this->load->view('header', $this->data);
                             </select>
                             <label class="black-text">Semester :</label>
                         </div>
-
                         <div class="input-field col s12">
                             <select class="gray-text" ng-model="data.thnakademik" required />
                                 <option value="">-- PILIH --</option>

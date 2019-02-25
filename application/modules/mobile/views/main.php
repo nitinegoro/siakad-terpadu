@@ -76,7 +76,7 @@ $this->load->view('header', $this->data);
                 </div>
                 <div class="col s4 center">
                     <div class="box-shorcuts z-depth-3">
-                        <a href="" class="center">
+                        <a href="<?php echo site_url('mobile/news') ?>" class="center">
                             <div class="icon-shortcuts indigo darken-4">
                                 <i class="icon fa fa-bullhorn"></i>
                             </div>

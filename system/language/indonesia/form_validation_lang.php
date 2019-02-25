@@ -41,3 +41,7 @@ $lang['form_validation_greater_than']		= '{field} harus berisi angka lebih besar
 $lang['form_validation_greater_than_equal_to']	= '{field} harus berisi angka yang lebih besar dari atau sama dengan {param}.';
 $lang['form_validation_error_message_not_set']	= 'Tidak dapat mengakses pesan kesalahan sesuai dengan nama Anda {field}.';
 $lang['form_validation_in_list']		= '{field} harus menjadi salah satu: {param}.';
+
+
+/* Custom */
+$lang['form_validation_valid_date'] = 'Format {field} tidak valid.';

@@ -42,16 +42,12 @@ class Login extends CI_Controller
         	$username = $this->input->post('username');
         	$password = $this->input->post('password');
 
-        	// get data account
         	$account = $this->_get_account($username);
 
-        	// authentifaction dengan password verify
         	if (password_verify($password, $account->password)) 
         	{
-        		// set session data
         	   $this->_set_account_login($account);
 
-        		// if session destroy in other page
         		if( $this->input->get('from_url') != '')
         		{
         			redirect( $this->input->get('from_url') );
@@ -59,7 +55,6 @@ class Login extends CI_Controller
         			redirect('dosen/main');
         		}
         	} else {
-	        	// set error alert
 				$this->template->alert(
 					'Kode Dosen dan password tidak valid.', 
 					array('type' => 'danger','icon' => 'times')
@@ -128,7 +123,7 @@ class Login extends CI_Controller
     {
         // get query prepare statmennts
         $query = $this->db->query("
-            SELECT lecturer.lecturer_id, lecturer.name, lecturer_accounts.* FROM lecturer JOIN lecturer_accounts ON lecturer.lecturer_id = lecturer_accounts.lecturer_id WHERE lecturer_code = ?", array($param));
+            SELECT lecturer.lecturer_id, lecturer.name, lecturer.lecturer_code, lecturer_accounts.* FROM lecturer JOIN lecturer_accounts ON lecturer.lecturer_id = lecturer_accounts.lecturer_id WHERE lecturer_code = ?", array($param));
 
         if($query->num_rows() == 1)
         {
@@ -152,7 +147,7 @@ class Login extends CI_Controller
         // set session data
         $account_session = array(
             'dosen_login' => TRUE,
-            'user_id' => $account->lecturer_id,
+            'dosen_id' => $account->lecturer_id,
             'account' => $account
         );  
         $this->session->set_userdata( $account_session );
